@@ -1,4 +1,4 @@
-##A Quick demo of BitcoinJS with React by Mike Langley
+## A Quick demo of BitcoinJS with React by Mike Langley
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
