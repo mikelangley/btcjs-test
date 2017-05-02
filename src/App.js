@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { Grid, Navbar, Jumbotron, Panel, Col,   Button } from 'react-bootstrap';
+//import logo from './logo.svg';
+//import './App.css';
 
 var bitcoin = require("bitcoinjs-lib");
 var keyPair = bitcoin.ECPair.makeRandom();
@@ -14,17 +15,43 @@ var key = keyPair.toWIF();
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>BitcoinJS React Demo</h2>
-        </div>
-        <p className="App-intro">
-          Here is your random address: {address}
-        </p>
-        <p className="App-intro">
-          And you probably want the key too: {key}
-        </p>
+      <div>
+        <Navbar inverse fixedTop>
+          <Grid>
+            <Navbar.Header>
+              <Navbar.Brand>
+                <a href="/">BitcoinJS React Demo</a>
+              </Navbar.Brand>
+              <Navbar.Toggle />
+            </Navbar.Header>
+          </Grid>
+        </Navbar>
+        <Jumbotron>
+          <Grid>
+            <h2>A basic demo to generate a random bitcoin address and private key</h2>
+            <p>
+              <Button
+                bsStyle="success"
+                bsSize="large"
+                href="http://react-bootstrap.github.io/components.html"
+                target="_blank">
+                Adding React Bootstrap
+              </Button>
+            </p>
+          </Grid>
+        </Jumbotron>
+        <Grid>
+          <Col xs={6}>
+            <Panel header="Here is your random address:" bsStyle="success">
+              {address}
+            </Panel>
+          </Col>
+          <Col xs={6}>
+            <Panel header="And you probably want the key too:" bsStyle="success">
+              {key}
+            </Panel>
+          </Col>
+        </Grid>
       </div>
     );
   }
