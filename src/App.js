@@ -35,12 +35,17 @@ class App extends Component {
                 bsSize="large"
                 href="http://react-bootstrap.github.io/components.html"
                 target="_blank">
-                Adding React Bootstrap
+                React Bootstrap
               </Button>
             </p>
           </Grid>
         </Jumbotron>
         <Grid>
+          <Col xs={12}>
+            <p className="lead">
+              This demo app uses Create React App, BitcoinJS and React Bootstrap
+            </p>
+          </Col>
           <Col xs={12} md={6}>
             <Panel header="Here is your random address:" bsStyle="primary">
               {address}
