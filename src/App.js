@@ -28,10 +28,10 @@ class App extends Component {
         </Navbar>
         <Jumbotron>
           <Grid>
-            <h2>A basic demo to generate a random bitcoin address and private key</h2>
+            <h3>A basic demo to generate a random bitcoin address and private key</h3>
             <p>
               <Button
-                bsStyle="success"
+                bsStyle="primary"
                 bsSize="large"
                 href="http://react-bootstrap.github.io/components.html"
                 target="_blank">
@@ -41,13 +41,13 @@ class App extends Component {
           </Grid>
         </Jumbotron>
         <Grid>
-          <Col xs={6}>
-            <Panel header="Here is your random address:" bsStyle="success">
+          <Col xs={12} md={6}>
+            <Panel header="Here is your random address:" bsStyle="primary">
               {address}
             </Panel>
           </Col>
-          <Col xs={6}>
-            <Panel header="And you probably want the key too:" bsStyle="success">
+          <Col xs={12} md={6}>
+            <Panel header="And you probably want the key too:" bsStyle="primary">
               {key}
             </Panel>
           </Col>
