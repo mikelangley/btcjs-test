@@ -1,16 +1,16 @@
 import React, { Component } from 'react';
 import { Grid, Navbar, Jumbotron, Panel, Col,   Button } from 'react-bootstrap';
+import bitcoin from 'bitcoinjs-lib';
 //import logo from './logo.svg';
 //import './App.css';
 
-var bitcoin = require("bitcoinjs-lib");
-var keyPair = bitcoin.ECPair.makeRandom();
+const keyPair = bitcoin.ECPair.makeRandom();
+let address = keyPair.getAddress();
+let key = keyPair.toWIF();
 
-console.log(keyPair.getAddress());
-var address = keyPair.getAddress();
-
-console.log(keyPair.toWIF());
-var key = keyPair.toWIF();
+function newAddress() {
+//we'll handle the click here to change the address and key
+}
 
 class App extends Component {
   render() {
@@ -28,22 +28,21 @@ class App extends Component {
         </Navbar>
         <Jumbotron>
           <Grid>
-            <h3>A basic demo to generate a random bitcoin address and private key</h3>
-            <p>
+            <h3 className="text-center">A basic demo to generate a random bitcoin address and private key</h3>
+            <p className="text-center">
               <Button
                 bsStyle="primary"
                 bsSize="large"
-                href="http://react-bootstrap.github.io/components.html"
-                target="_blank">
-                React Bootstrap
+                href="/">
+                New Address
               </Button>
             </p>
           </Grid>
         </Jumbotron>
         <Grid>
           <Col xs={12}>
-            <p className="lead">
-              This demo app uses Create React App, BitcoinJS and React Bootstrap
+            <p className="lead text-center">
+              This demo app uses <a href="https://github.com/facebookincubator/create-react-app">Create React App</a>, <a href="https://bitcoinjs.org/">BitcoinJS</a> and <a href="http://react-bootstrap.github.io/">React Bootstrap</a>
             </p>
           </Col>
           <Col xs={12} md={6}>
